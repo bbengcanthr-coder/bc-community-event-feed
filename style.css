@@ -1,0 +1,240 @@
+:root {
+    --twitter-blue: #1DA1F2;
+    --twitter-blue-hover: #1a91da;
+    --facebook-blue: #1877F2;
+    --bg-color: #FFFFFF;
+    --bg-light: #F7F9F9;
+    --text-main: #0F1419;
+    --text-muted: #536471;
+    --border-color: #EFF3F4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+.app-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Left Sidebar --- */
+.sidebar-left {
+    width: 275px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.logo {
+    font-size: 30px;
+    color: var(--twitter-blue);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 20px;
+    border-radius: 30px;
+    margin-bottom: 5px;
+    transition: background 0.2s;
+}
+
+.nav-menu a:hover {
+    background-color: var(--bg-light);
+}
+
+.nav-menu a.active {
+    font-weight: 700;
+}
+
+.auth-section {
+    margin-top: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* --- Center Feed --- */
+.feed-center {
+    width: 600px;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    min-height: 100vh;
+}
+
+.page-header {
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 10;
+}
+
+.page-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.compose-box {
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    gap: 15px;
+}
+
+.compose-avatar img, .avatar-placeholder, .tweet-avatar img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    background-color: var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 20px;
+}
+
+.compose-content {
+    flex: 1;
+}
+
+.compose-content textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 20px;
+    font-family: 'Kanit', sans-serif;
+    min-height: 60px;
+    margin-bottom: 10px;
+}
+
+.compose-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+}
+
+.action-icons i {
+    color: var(--twitter-blue);
+    font-size: 18px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--twitter-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-family: 'Kanit', sans-serif;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) { background-color: var(--twitter-blue-hover); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.facebook-btn { background-color: var(--facebook-blue); }
+
+/* --- Tweet Component --- */
+.tweet {
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    gap: 15px;
+    transition: background 0.2s;
+}
+
+.tweet:hover {
+    background-color: var(--bg-light);
+}
+
+.tweet-header {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+    align-items: baseline;
+}
+
+.tweet-name { font-weight: 700; }
+.tweet-time { color: var(--text-muted); font-size: 14px; }
+.tweet-text { line-height: 1.5; font-size: 15px; }
+
+/* --- Right Sidebar --- */
+.sidebar-right {
+    width: 350px;
+    padding: 10px 20px;
+}
+
+.search-bar {
+    background-color: var(--border-color);
+    border-radius: 30px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: 'Kanit', sans-serif;
+    width: 100%;
+}
+
+.widget {
+    background-color: var(--bg-light);
+    border-radius: 16px;
+    padding: 15px;
+}
+
+.widget h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.trend-item {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.trend-item span { font-size: 13px; color: var(--text-muted); }
+.trend-item h4 { font-size: 15px; font-weight: 700; margin: 3px 0; }
+
+.loading-text { text-align: center; padding: 20px; color: var(--text-muted); }
