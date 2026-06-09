@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BC Community Event Feed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="sidebar-left">
+            <div class="logo">
+                <i class="fa-solid fa-users-rays"></i>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="active"><i class="fa-solid fa-house"></i> <span>หน้าแรก</span></a>
+                <a href="#"><i class="fa-solid fa-hashtag"></i> <span>สำรวจอีเว้นท์</span></a>
+                <a href="#"><i class="fa-regular fa-bell"></i> <span>แจ้งเตือน</span></a>
+            </nav>
+            
+            <div id="auth-section" class="auth-section">
+                <button id="login-google-btn" class="btn-primary auth-btn"><i class="fa-brands fa-google"></i> Login Google</button>
+                <button id="login-facebook-btn" class="btn-primary auth-btn facebook-btn"><i class="fa-brands fa-facebook"></i> Login Facebook</button>
+            </div>
+        </header>
+
+        <main class="feed-center">
+            <div class="page-header">
+                <h2>หน้าแรก</h2>
+            </div>
+
+            <div class="compose-box">
+                <div class="compose-avatar">
+                    <img id="current-user-avatar" src="https://via.placeholder.com/48" alt="Avatar" style="display: none;">
+                    <div id="default-avatar" class="avatar-placeholder"><i class="fa-solid fa-user"></i></div>
+                </div>
+                <div class="compose-content">
+                    <textarea id="event-input" placeholder="มีอีเว้นท์อะไรในคอมมู นัดมาเลย!"></textarea>
+                    <div class="compose-actions">
+                        <div class="action-icons">
+                            <i class="fa-regular fa-calendar"></i>
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <button id="post-btn" class="btn-primary" disabled>โพสต์นัดหมาย</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="feed-container">
+                <div class="loading-text">กำลังโหลดอีเว้นท์...</div>
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="ค้นหาอีเว้นท์...">
+            </div>
+            
+            <div class="widget">
+                <h3>กำลังมาแรงใน BC</h3>
+                <div class="trend-item">
+                    <span>อีเว้นท์ • มาแรง</span>
+                    <h4>#บอร์ดเกมสุดสัปดาห์</h4>
+                    <span>120 RSVP</span>
+                </div>
+                <div class="trend-item">
+                    <span>คอนเสิร์ต • วันนี้</span>
+                    <h4>#BCFormulaConcert</h4>
+                    <span>340 RSVP</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
